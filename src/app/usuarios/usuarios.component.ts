@@ -15,4 +15,8 @@ export class UsuariosComponent {
 
   usuarioSeleccionado = USUARIOS_FALSOS[IndiceAleatorio];
 
+  get imgPath() {
+    return 'assets/usuarios/' + this.usuarioSeleccionado.avatar
+  }
+
 }
