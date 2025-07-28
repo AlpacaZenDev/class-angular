@@ -1,8 +1,4 @@
-import { Component } from '@angular/core';
-
-import { USUARIOS_FALSOS } from '../usuarios-falsos';
-const IndiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length);
-
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
 
 @Component({
@@ -13,10 +9,18 @@ const IndiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length);
 })
 export class UsuariosComponent {
 
-  usuarioSeleccionado = USUARIOS_FALSOS[IndiceAleatorio];
+  @Input({required: true}) id!: string;
+  @Input({required: true}) avatar!: string;
+  @Input({required: true}) nombre!: string;
+  @Output() selection = new EventEmitter<string>();
 
   get imgPath() {
-    return 'assets/usuarios/' + this.usuarioSeleccionado.avatar
+    return `assets/usuarios/${this.avatar}`;
+  }
+
+
+  whenSelectingUser() {
+    this.selection.emit(this.id);
   }
 
 }

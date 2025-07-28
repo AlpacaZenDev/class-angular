@@ -1,3 +1,24 @@
 
 <app-encabezado></app-encabezado>
-<app-usuarios></app-usuarios>
+
+<main>
+  <ul id="usuarios">
+    <li>
+      <app-usuarios [id]="usuarios[0].id" [avatar]="usuarios[0].avatar" [nombre]="usuarios[0].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
+    </li>
+    <li>
+      <app-usuarios [id]="usuarios[1].id" [avatar]="usuarios[1].avatar" [nombre]="usuarios[1].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
+    </li>
+    <li>
+      <app-usuarios [id]="usuarios[2].id" [avatar]="usuarios[2].avatar" [nombre]="usuarios[2].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
+    </li>
+    <li>
+      <app-usuarios [id]="usuarios[3].id" [avatar]="usuarios[3].avatar" [nombre]="usuarios[3].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
+    </li>
+  </ul>
+
+<app-tareas [nombre]="usuarioSeleccionado.nombre"> </app-tareas>
+</main>
+
+
+
