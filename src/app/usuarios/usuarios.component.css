@@ -2,8 +2,8 @@ div {
   border-radius: 6px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: fit-content;
-  margin-left: 0; /* no me convence */
+  /* width: fit-content; */
+  /* margin-left: 0; /* no me convence */
 }
 
 button {
@@ -17,8 +17,8 @@ button {
   font: inherit;
   cursor: pointer;
   /* width: auto; */
-  width: 220px;
-  min-width: 180px;
+  width: 100%;
+  min-width: 10rem;
   text-align: left;
 }
 
