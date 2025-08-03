@@ -19,7 +19,7 @@ import { TareasComponent } from "./tareas/tareas.component"; // Importar datos d
 })
 export class AppComponent {
   usuarios = USUARIOS_FALSOS;
-  idUsuarioSeleccionado = 'u1';
+  idUsuarioSeleccionado?: string;
 
   get usuarioSeleccionado() {
     return this.usuarios.find((usuario) => usuario.id === this.idUsuarioSeleccionado)!;

@@ -1,5 +1,18 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
+interface Usuario {
+    id: string;
+    avatar: string;
+    nombre: string;
+}
+
+/*
+type Usuario = {
+    id: string;
+    avatar: string;
+    nombre: string;
+  }
+*/
 
 @Component({
   selector: 'app-usuarios',
@@ -9,18 +22,16 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 })
 export class UsuariosComponent {
 
-  @Input({required: true}) id!: string;
-  @Input({required: true}) avatar!: string;
-  @Input({required: true}) nombre!: string;
+  @Input({required: true}) usuario!: Usuario;
   @Output() selection = new EventEmitter<string>();
 
   get imgPath() {
-    return `assets/usuarios/${this.avatar}`;
+    return `assets/usuarios/${this.usuario.avatar}`;
   }
 
 
   whenSelectingUser() {
-    this.selection.emit(this.id);
+    this.selection.emit(this.usuario.id);
   }
 
 }

@@ -3,21 +3,20 @@
 
 <main>
   <ul id="usuarios">
-    <li>
-      <app-usuarios [id]="usuarios[0].id" [avatar]="usuarios[0].avatar" [nombre]="usuarios[0].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
-    </li>
-    <li>
-      <app-usuarios [id]="usuarios[1].id" [avatar]="usuarios[1].avatar" [nombre]="usuarios[1].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
-    </li>
-    <li>
-      <app-usuarios [id]="usuarios[2].id" [avatar]="usuarios[2].avatar" [nombre]="usuarios[2].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
-    </li>
-    <li>
-      <app-usuarios [id]="usuarios[3].id" [avatar]="usuarios[3].avatar" [nombre]="usuarios[3].nombre" (selection)="whenSelectingUser($event)"></app-usuarios>
-    </li>
+    @for (usuario of usuarios; track usuario.id) {
+      <li>
+        <app-usuarios [usuario]="usuario" (selection)="whenSelectingUser($event)"></app-usuarios>
+      </li>
+    }
+
   </ul>
 
-<app-tareas [nombre]="usuarioSeleccionado.nombre"> </app-tareas>
+  @if (usuarioSeleccionado) {
+    <app-tareas [idUsuario]="usuarioSeleccionado.id" [nombre]="usuarioSeleccionado.nombre"> </app-tareas>
+  } @else {
+    <p id="textoCondicional">Seleccione un usuario de la lista</p>
+  }
+
 </main>
 
 

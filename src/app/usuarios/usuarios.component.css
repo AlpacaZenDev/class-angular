@@ -17,8 +17,8 @@ button {
   font: inherit;
   cursor: pointer;
   /* width: auto; */
-  width: 300px;
-  min-width: 200px;
+  width: 220px;
+  min-width: 180px;
   text-align: left;
 }
 
