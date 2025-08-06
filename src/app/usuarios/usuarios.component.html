@@ -1,7 +1,7 @@
-<div>
+<app-tarjeta>
   <button [class.active]="seleccionado" (click)="whenSelectingUser()">
     <img [src]="imgPath"
          [alt]="usuario.nombre">
     <span>{{ usuario.nombre }}</span>
   </button>
-</div>
+</app-tarjeta>
